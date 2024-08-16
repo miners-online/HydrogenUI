@@ -2,10 +2,13 @@
   "name": "hydrogen-ui",
   "version": "0.1.0",
   "description": "A UI design system containing extra components for Microsoft Fluent UI. ",
-  "author": "Miners Online <https://minersonline.uk/>",
+  "author": {
+    "name": "Miners Online",
+    "website": "https://minersonline.uk/"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/miners-online/HydrogenUI"
+    "url": "git+https://github.com/miners-online/HydrogenUI.git"
   },
   "bugs": {
     "url": "https://github.com/miners-online/HydrogenUI/issues"
@@ -32,6 +35,9 @@
     "@rollup/plugin-commonjs": "^26.0.1",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
+    "@storybook/addon-a11y": "^8.2.9",
+    "@storybook/addon-coverage": "^1.0.4",
+    "@storybook/addon-onboarding": "^8.2.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.4"
@@ -57,6 +63,7 @@
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react": "^4.2.1",
+    "chromatic": "^11.7.1",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
@@ -71,5 +78,6 @@
   "resolutions": {
     "jackspeak": "2.1.1"
   },
-  "packageManager": "yarn@4.4.0"
+  "packageManager": "yarn@4.4.0",
+  "homepage": "https://github.com/miners-online/HydrogenUI#readme"
 }

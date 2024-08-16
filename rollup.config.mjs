@@ -1,15 +1,11 @@
+import packageJson from './package.json' assert { type: 'json' };
+
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import terser from '@rollup/plugin-terser';
-import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import { babel } from '@rollup/plugin-babel';
-
-// This is required to read package.json file when
-// using Native ES modules in Node.js
-// https://rollupjs.org/command-line-interface/#importing-package-json
-import { createRequire } from 'node:module';
-const requireFile = createRequire(import.meta.url);
-const packageJson = requireFile('./package.json');
+import typescript from '@rollup/plugin-typescript';
+import { terser } from 'rollup-plugin-terser';
+import external from 'rollup-plugin-peer-deps-external';
+import dts from 'rollup-plugin-dts';
 
 export default [
   {
@@ -19,26 +15,27 @@ export default [
         file: packageJson.main,
         format: 'cjs',
         sourcemap: true,
+        name: '@miners-online/hydrogen-ui'
       },
       {
         file: packageJson.module,
         format: 'esm',
-        exports: 'named',
         sourcemap: true,
-      },
+        name: '@miners-online/hydrogen-ui'
+      }
     ],
     plugins: [
-      peerDepsExternal(),
-      resolve({
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      }),
+      external(),
+      resolve(),
       commonjs(),
-      terser(),
-      babel({
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-        exclude: 'node_modules/**',
-      }),
-    ],
-    external: ['react', 'react-dom', '@emotion/react', '@emotion/styled', '@fluentui/react-components', '@fluentui/react-icons'],
+      typescript({ tsconfig: './tsconfig.json' }),
+      terser()
+    ]
   },
-];
+  {
+    input: 'dist/esm/types/index.d.ts',
+    output: [{ file: 'dist/index.d.ts', format: "esm" }],
+    external: [/\.css$/],
+    plugins: [dts()],
+  },
+]

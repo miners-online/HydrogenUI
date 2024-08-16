@@ -1,5 +1,5 @@
 {
-  "name": "hydrogen-ui",
+  "name": "@miners-online/hydrogen-ui",
   "version": "0.1.0",
   "description": "A UI design system containing extra components for Microsoft Fluent UI. ",
   "author": {
@@ -63,6 +63,7 @@
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react": "^4.2.1",
+    "auto": "^11.2.0",
     "chromatic": "^11.7.1",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.1",

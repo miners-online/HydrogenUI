@@ -1,6 +1,5 @@
-import AppHeader from '../components/AppHeader/AppHeader';
+import AppHeader from '.';
 import { fn } from '@storybook/test';
-import { AppHeaderProps } from '../components/AppHeader/AppHeader.types';
 
 export default {
   title: 'Navigation/AppHeader',
@@ -18,16 +17,14 @@ export default {
   // },
 };
 
-const Example1Args: AppHeaderProps = {
-  productName: "Hydrogen Design",
-  avatar: {
-    name: "SH",
-    badge: { status: 'available' }
-  }
-}
-
 export const Example1 = {
-  args: Example1Args
+  args: {
+    productName: "Hydrogen Design",
+    avatar: {
+      name: "SH",
+      badge: { status: 'available' }
+    }
+  }
 };
 
 // export const LoggedOut = {};

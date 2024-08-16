@@ -1,6 +1,6 @@
 {
   "name": "@miners-online/hydrogen-ui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A UI design system containing extra components for Microsoft Fluent UI. ",
   "author": {
     "name": "Miners Online",
@@ -72,12 +72,12 @@
     "msw": "^2.3.0",
     "msw-storybook-addon": "^2.0.3",
     "prop-types": "^15.8.1",
+    "semantic-release": "^24.0.0",
     "storybook": "^8.2.9",
     "vite": "^5.2.0"
   },
   "resolutions": {
     "jackspeak": "2.1.1"
   },
-  "packageManager": "yarn@4.4.0",
   "homepage": "https://github.com/miners-online/HydrogenUI#readme"
 }

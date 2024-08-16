@@ -14,10 +14,18 @@ jobs:
         with:
           #👇 Fetches all history so Chromatic can compare against previous builds
           fetch-depth: 0
-      - uses: actions/setup-node@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          #👇 Sets the version of Node.js to use
-          node-version: 16
+          node-version: ${{ matrix.node-version }}
+          cache: 'yarn'
+          cache-dependency-path: '**/package.json'
+          check-latest: true
+      - name: Enable Corepack
+        run: corepack enable
+      - name: Prepare Yarn 4
+        run: corepack prepare yarn@latest --activate
       - run: yarn
         #👇 Adds Chromatic as a step in the workflow
       - uses: chromaui/action@v1

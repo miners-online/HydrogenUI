@@ -2,6 +2,8 @@
 
 A UI design system containing extra components for Microsoft Fluent UI.
 
+Read more on our [Storybook](https://hydrogenui.pages.dev).
+
 ## Contribute
 
 If you encounter an issue with the design system, we encourage you to open an issue in this template's repository.

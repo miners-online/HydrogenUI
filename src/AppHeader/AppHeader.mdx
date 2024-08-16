@@ -1,0 +1,107 @@
+import {
+  ArgTypes,
+  Canvas,
+  Controls,
+  Description,
+  Meta,
+  Subtitle,
+  Story,
+} from '@storybook/blocks';
+
+import * as AppHeaderStories from './AppHeader.stories';
+
+# App Header
+
+<Meta of={AppHeaderStories} />
+
+<Subtitle>Provides a unified navigation bar for consistent user experience across applications</Subtitle>
+
+## Overview
+
+The `AppHeader` component is designed to deliver a consistent and accessible navigation experience across your application.
+It serves as the primary interface for users to access various features and services within the app. Key elements of the `AppHeader` include:
+
+- **App Launcher**: A button that opens the App Launcher, offering shortcuts to other services and applications within the ecosystem.
+- **Product Name**: Displays the name of the product or application, providing context to users.
+- **Search Bar**: Allows users to perform searches within the application or across integrated services.
+- **Commands Array**: A collection of action buttons or links that enable users to quickly access common commands or features.
+- **Account Manager**: An interface element for managing user accounts, which can include features like profile settings, notifications, and sign-out options.
+
+The `AppHeader` is a persistent element across the application, ensuring that users have constant access to navigation tools and key functions.
+
+<Canvas>
+  <Story of={AppHeaderStories.DefaultState} />
+</Canvas>
+
+<ArgTypes of={AppHeaderStories} />
+
+## Playground
+
+Explore and interact with the `AppHeader` component to see how it adapts to different properties and configurations.
+Use the [playground](/story/navigation-appheader--playground) to test various inputs and observe real-time changes.
+
+## Avatar Variants
+
+The Account Manager section of the `AppHeader` includes an avatar that is a standard **Fluent UI Avatar** component.
+This avatar can be customized to reflect different user statuses, providing visual cues about the user's current state or availability.
+Each variant demonstrates how the avatar can adapt to various conditions:
+
+### No Image Avatar
+
+<Description of={AppHeaderStories.NoImageAvatar} />
+
+<Story of={AppHeaderStories.NoImageAvatar} />
+
+### Busy Avatar
+
+<Description of={AppHeaderStories.BusyAvatar} />
+
+<Story of={AppHeaderStories.BusyAvatar} />
+
+### Out Of Office Avatar
+
+<Description of={AppHeaderStories.OutOfOfficeAvatar} />
+
+<Story of={AppHeaderStories.OutOfOfficeAvatar} />
+
+### Away Avatar
+
+<Description of={AppHeaderStories.AwayAvatar} />
+
+<Story of={AppHeaderStories.AwayAvatar} />
+
+### Available Avatar
+
+<Description of={AppHeaderStories.AvailableAvatar} />
+
+<Story of={AppHeaderStories.AvailableAvatar} />
+
+### Offline Avatar
+
+<Description of={AppHeaderStories.OfflineAvatar} />
+
+<Story of={AppHeaderStories.OfflineAvatar} />
+
+### Do Not Disturb Avatar
+
+<Description of={AppHeaderStories.DoNotDisturbAvatar} />
+
+<Story of={AppHeaderStories.DoNotDisturbAvatar} />
+
+### Unknown Avatar
+
+<Description of={AppHeaderStories.UnknownAvatar} />
+
+<Story of={AppHeaderStories.UnknownAvatar} />
+
+### Blocked Avatar
+
+<Description of={AppHeaderStories.BlockedAvatar} />
+
+<Story of={AppHeaderStories.BlockedAvatar} />
+
+### Dual States Avatar
+
+<Description of={AppHeaderStories.DualStatesAvatar} />
+
+<Story of={AppHeaderStories.DualStatesAvatar} />

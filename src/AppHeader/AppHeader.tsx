@@ -1,11 +1,12 @@
 import React from 'react';
-import { Button, Text, Input, Avatar, makeStyles } from '@fluentui/react-components';
-import { GridDots24Filled, Search24Regular, Settings24Regular, Question24Filled, Edit24Regular, Emoji24Regular } from '@fluentui/react-icons';
+import { Button, Text, Input, Avatar, makeStyles, tokens } from '@fluentui/react-components';
+import { Toolbar, ToolbarButton } from "@fluentui/react-components";
+import { GridDots24Filled, Search24Regular } from '@fluentui/react-icons';
 import { AppHeaderProps } from './AppHeader.types';
 
 const useStyles = makeStyles({
   navBar: {
-    backgroundColor: '#0E519C',
+    backgroundColor: tokens.colorBrandBackground,
     display: 'flex',
     alignItems: 'center',
     height: '48px'
@@ -45,26 +46,31 @@ const useStyles = makeStyles({
     height: '48px'
   },
   textWhite: {
-    color: 'white',
+    color: tokens.colorBrandBackgroundInverted,
   },
   textTitle: {
-    color: 'white',
+    color: tokens.colorBrandBackgroundInverted,
     fontSize: '16px',
     whiteSpace: 'nowrap',  // Prevents text from wrapping
     overflow: 'hidden',     // Hides overflowing content
   },
   iconButton: {
-    color: 'white',
+    color: tokens.colorBrandBackgroundInverted,
   },
 });
 
 const AppHeader = (props: AppHeaderProps) => {
   const styles = useStyles();
 
+  // Function to render the icon with the desired color
+  const renderIconWithColor = (icon: React.ReactElement, color: string) => {
+    return React.cloneElement(icon, { color });
+  };
+
   return (
     <div className={styles.navBar}>
       <div className={styles.appLauncher}>
-        <Button appearance="transparent" icon={<GridDots24Filled color='white'/>} aria-label='App launcher' title='App Launcher'/>
+        <Button appearance="transparent" icon={<GridDots24Filled color={tokens.colorBrandBackgroundInverted}/>} aria-label='App launcher' title='App Launcher'/>
       </div>
       <div className={styles.titleSection}>
         <Text className={styles.textTitle} weight="semibold">{props.productName}</Text>
@@ -78,10 +84,20 @@ const AppHeader = (props: AppHeaderProps) => {
           />
         </div>
         <div className={styles.middleCommands}>
-          <Button appearance="transparent" icon={<Emoji24Regular color='white' />} />
-          <Button appearance="transparent" icon={<Edit24Regular color='white' />} />
-          <Button appearance="transparent" icon={<Settings24Regular color='white' />} />
-          <Button appearance="transparent" icon={<Question24Filled color='white' />} />
+          <Toolbar >
+            {props.commands.map((tab) => (
+              <ToolbarButton
+                key={tab.id}
+                icon={renderIconWithColor(tab.icon, tokens.colorBrandBackgroundInverted)}
+                value={tab.id}
+                {...tab.buttonProps}
+              />
+            ))}
+            {/* <ToolbarButton icon={<Emoji24Regular color={tokens.colorBrandBackgroundInverted}/>} value="tab1"></ToolbarButton>
+            <ToolbarButton icon={<Edit24Regular color={tokens.colorBrandBackgroundInverted}/>} value="tab2"></ToolbarButton>
+            <ToolbarButton icon={<Settings24Regular color={tokens.colorBrandBackgroundInverted}/>} value="tab3"></ToolbarButton>
+            <ToolbarButton icon={<Question24Filled color={tokens.colorBrandBackgroundInverted}/>}  value="tab4"></ToolbarButton> */}
+          </Toolbar >
         </div>
       </div>
       <div className={styles.accountManager}>

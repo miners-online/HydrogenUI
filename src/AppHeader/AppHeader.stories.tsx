@@ -1,4 +1,4 @@
-import { Edit24Regular, Emoji24Regular, Question24Filled, Settings24Regular } from '@fluentui/react-icons';
+import { Edit24Regular, Emoji24Regular, Question24Filled, Settings24Regular, AccessTime24Regular } from '@fluentui/react-icons';
 import AppHeader from '.';
 import { fn } from '@storybook/test';
 import React from 'react';
@@ -608,6 +608,52 @@ export const DualStatesAvatar = {
         id: 'help',
         name: 'Help',
         icon: <Question24Filled/>,
+        buttonProps: {
+          onClick: fn()
+        }
+      },
+    ],
+  },
+};
+
+export const DifferentCommands = {
+  args: {
+    productName: 'Different Commands',
+    avatar: {
+      name: 'Different Commands Avatar',
+      badge: { status: 'available', outOfOffice: true },
+      image: { src: 'https://randomuser.me/api/portraits/men/85.jpg' },
+    },
+    accountManager: {
+      name: 'Different Commands Avatar',
+      buttonProps: {
+        onClick: fn()
+      }
+    },
+    appLauncherButtonProps: {
+      onClick: fn()
+    },
+    commands: [
+      {
+        id: 'feedback',
+        name: 'Feedback',
+        icon: <Emoji24Regular/>,
+        buttonProps: {
+          onClick: fn()
+        }
+      },
+      {
+        id: 'help',
+        name: 'Help',
+        icon: <Question24Filled/>,
+        buttonProps: {
+          onClick: fn()
+        }
+      },
+      {
+        id: 'access-time',
+        name: 'Access Time',
+        icon: <AccessTime24Regular/>,
         buttonProps: {
           onClick: fn()
         }

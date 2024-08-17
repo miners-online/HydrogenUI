@@ -55,7 +55,12 @@ const useStyles = makeStyles({
     overflow: 'hidden',     // Hides overflowing content
   },
   iconButton: {
-    color: tokens.colorBrandBackgroundInverted,
+    ':hover': {
+      backgroundColor: tokens.colorBrandBackgroundHover,
+    },
+    ':hover:active': {
+      backgroundColor: tokens.colorBrandBackgroundSelected,
+    }
   },
 });
 
@@ -70,7 +75,7 @@ const AppHeader = (props: AppHeaderProps) => {
   return (
     <div className={styles.navBar}>
       <div className={styles.appLauncher}>
-        <Button appearance="transparent" icon={<GridDots24Filled color={tokens.colorBrandBackgroundInverted}/>} aria-label='App launcher' title='App Launcher'/>
+        <ToolbarButton className={styles.iconButton} icon={<GridDots24Filled color={tokens.colorBrandBackgroundInverted}/>} {...props.appLauncherButtonProps} aria-label='App launcher' title='App Launcher'/>
       </div>
       <div className={styles.titleSection}>
         <Text className={styles.textTitle} weight="semibold">{props.productName}</Text>
@@ -87,21 +92,20 @@ const AppHeader = (props: AppHeaderProps) => {
           <Toolbar >
             {props.commands.map((tab) => (
               <ToolbarButton
+                className={styles.iconButton}
                 key={tab.id}
                 icon={renderIconWithColor(tab.icon, tokens.colorBrandBackgroundInverted)}
                 value={tab.id}
+                aria-label={tab.name}
+                title={tab.name}
                 {...tab.buttonProps}
               />
             ))}
-            {/* <ToolbarButton icon={<Emoji24Regular color={tokens.colorBrandBackgroundInverted}/>} value="tab1"></ToolbarButton>
-            <ToolbarButton icon={<Edit24Regular color={tokens.colorBrandBackgroundInverted}/>} value="tab2"></ToolbarButton>
-            <ToolbarButton icon={<Settings24Regular color={tokens.colorBrandBackgroundInverted}/>} value="tab3"></ToolbarButton>
-            <ToolbarButton icon={<Question24Filled color={tokens.colorBrandBackgroundInverted}/>}  value="tab4"></ToolbarButton> */}
           </Toolbar >
         </div>
       </div>
       <div className={styles.accountManager}>
-        <Avatar {...props.avatar} />
+        <Button className={styles.iconButton} appearance="transparent" icon={<Avatar {...props.avatar}/>} {...props.accountManager.buttonProps} aria-label={`Account Manager for ${props.accountManager.name}`} title={`Account Manager for ${props.accountManager.name}`}/>
       </div>
     </div>
   );

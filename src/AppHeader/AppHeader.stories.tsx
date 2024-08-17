@@ -26,6 +26,15 @@ export const DefaultState = {
       name: 'John Doe',
       badge: { status: 'available' },
     },
+    accountManager: {
+      name: 'John Doe',
+      buttonProps: {
+        onClick: fn()
+      }
+    },
+    appLauncherButtonProps: {
+      onClick: fn()
+    },
     commands: [
       {
         id: 'feedback',
@@ -69,6 +78,15 @@ export const NoImageAvatar = {
     avatar: {
       name: 'No Image Avatar',
       badge: { status: 'busy' },
+    },
+    accountManager: {
+      name: 'No Image Avatar',
+      buttonProps: {
+        onClick: fn()
+      }
+    },
+    appLauncherButtonProps: {
+      onClick: fn()
     },
     commands: [
       {
@@ -115,6 +133,15 @@ export const BusyAvatar = {
       badge: { status: 'busy' },
       image: { src: 'https://randomuser.me/api/portraits/men/85.jpg' },
     },
+    accountManager: {
+      name: 'Busy Avatar',
+      buttonProps: {
+        onClick: fn()
+      }
+    },
+    appLauncherButtonProps: {
+      onClick: fn()
+    },
     commands: [
       {
         id: 'feedback',
@@ -159,6 +186,15 @@ export const OutOfOfficeAvatar = {
       name: 'Out Of Office Avatar',
       badge: { status: 'out-of-office' },
       image: { src: 'https://randomuser.me/api/portraits/men/85.jpg' },
+    },
+    accountManager: {
+      name: 'Out Of Office Avatar',
+      buttonProps: {
+        onClick: fn()
+      }
+    },
+    appLauncherButtonProps: {
+      onClick: fn()
     },
     commands: [
       {
@@ -205,6 +241,15 @@ export const AwayAvatar = {
       badge: { status: 'away' },
       image: { src: 'https://randomuser.me/api/portraits/men/85.jpg' },
     },
+    accountManager: {
+      name: 'Away Avatar',
+      buttonProps: {
+        onClick: fn()
+      }
+    },
+    appLauncherButtonProps: {
+      onClick: fn()
+    },
     commands: [
       {
         id: 'feedback',
@@ -249,6 +294,15 @@ export const AvailableAvatar = {
       name: 'Available Avatar',
       badge: { status: 'available' },
       image: { src: 'https://randomuser.me/api/portraits/men/85.jpg' },
+    },
+    accountManager: {
+      name: 'Available Avatar',
+      buttonProps: {
+        onClick: fn()
+      }
+    },
+    appLauncherButtonProps: {
+      onClick: fn()
     },
     commands: [
       {
@@ -295,6 +349,15 @@ export const OfflineAvatar = {
       badge: { status: 'offline' },
       image: { src: 'https://randomuser.me/api/portraits/men/85.jpg' },
     },
+    accountManager: {
+      name: 'Offline Avatar',
+      buttonProps: {
+        onClick: fn()
+      }
+    },
+    appLauncherButtonProps: {
+      onClick: fn()
+    },
     commands: [
       {
         id: 'feedback',
@@ -339,6 +402,15 @@ export const DoNotDisturbAvatar = {
       name: 'Do Not Disturb Avatar',
       badge: { status: 'do-not-disturb' },
       image: { src: 'https://randomuser.me/api/portraits/men/85.jpg' },
+    },
+    accountManager: {
+      name: 'Do Not Disturb Avatar',
+      buttonProps: {
+        onClick: fn()
+      }
+    },
+    appLauncherButtonProps: {
+      onClick: fn()
     },
     commands: [
       {
@@ -385,6 +457,15 @@ export const UnknownAvatar = {
       badge: { status: 'unknown' },
       image: { src: 'https://randomuser.me/api/portraits/men/85.jpg' },
     },
+    accountManager: {
+      name: 'Unknown Avatar',
+      buttonProps: {
+        onClick: fn()
+      }
+    },
+    appLauncherButtonProps: {
+      onClick: fn()
+    },
     commands: [
       {
         id: 'feedback',
@@ -429,6 +510,15 @@ export const BlockedAvatar = {
       name: 'Blocked Avatar',
       badge: { status: 'blocked' },
       image: { src: 'https://randomuser.me/api/portraits/men/85.jpg' },
+    },
+    accountManager: {
+      name: 'Blocked Avatar',
+      buttonProps: {
+        onClick: fn()
+      }
+    },
+    appLauncherButtonProps: {
+      onClick: fn()
     },
     commands: [
       {
@@ -475,6 +565,15 @@ export const DualStatesAvatar = {
       badge: { status: 'available', outOfOffice: true },
       image: { src: 'https://randomuser.me/api/portraits/men/85.jpg' },
     },
+    accountManager: {
+      name: 'Dual States Avatar',
+      buttonProps: {
+        onClick: fn()
+      }
+    },
+    appLauncherButtonProps: {
+      onClick: fn()
+    },
     commands: [
       {
         id: 'feedback',
@@ -516,8 +615,17 @@ export const Playground = {
   args: {
     productName: 'Default Product',
     avatar: {
-      name: 'JD',
+      name: 'John Doe',
       badge: { status: 'available' },
+    },
+    accountManager: {
+      name: 'John Doe',
+      buttonProps: {
+        onClick: fn()
+      }
+    },
+    appLauncherButtonProps: {
+      onClick: fn()
     },
     commands: [
       {

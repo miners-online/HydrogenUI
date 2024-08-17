@@ -2,7 +2,7 @@ import AppHeader from '.';
 import { fn } from '@storybook/test';
 
 export default {
-  title: 'Hydrogen UI/Components/Navigation/AppHeader',
+  title: 'Components/Navigation/AppHeader',
   component: AppHeader,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   // tags: ['autodocs'],

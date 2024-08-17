@@ -1,4 +1,8 @@
-import { AvatarProps, ButtonProps } from '@fluentui/react-components';
+import {
+  AvatarProps,
+  ButtonProps,
+  InputProps,
+} from '@fluentui/react-components';
 
 export interface AppHeaderProps {
   productName: string;
@@ -8,6 +12,7 @@ export interface AppHeaderProps {
   appLauncherButtonProps?: Partial<
     Pick<ButtonProps, 'disabled' | 'disabledFocusable'>
   >;
+  searchProps?: InputProps;
 }
 
 export type AppHeaderCommand = {

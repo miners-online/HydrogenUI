@@ -86,6 +86,7 @@ const AppHeader = (props: AppHeaderProps) => {
             contentBefore={<Search24Regular />}
             placeholder="Search"
             appearance="filled-lighter"
+            {...props.searchProps}
           />
         </div>
         <div className={styles.middleCommands}>

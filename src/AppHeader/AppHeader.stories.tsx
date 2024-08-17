@@ -17,6 +17,11 @@ export default {
   //   onLogout: fn(),
   //   onCreateAccount: fn(),
   // },
+  args: {
+    searchProps: {
+      onChange: fn()
+    }
+  }
 };
 
 export const DefaultState = {

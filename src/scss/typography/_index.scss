@@ -1,0 +1,80 @@
+@use "sass:map";
+
+$font-primary: 'Arial', sans-serif;
+$font-secondary: 'Georgia', serif;
+
+$text: (
+    transform: (
+        uppercase: uppercase,
+        lowercase: lowercase,
+        capitalize: capitalize,
+    ),
+    align: (
+        center: center,
+        left: left,
+        right: right,
+    ),
+    decoration: (
+        underline: underline,
+    ),
+);
+
+$font: (
+    size: (
+        xxs: 0.6em,
+        xs: 0.8em,
+        sm: 0.9em,
+        lg: 1.2em,
+        xl: 1.5em,
+        xxl: 2.5em,
+        xxxl: 3.5em,
+        xxxxl: 4.5em,
+    ),
+    weight: (
+        light: 300,
+        normal: 400,
+        book: 500,
+        semibold: 600,
+        bold: 700,
+    ),
+);
+
+@each $property, $values in $text {
+    @each $key, $value in $values {
+        .text-#{$key} {
+            text-#{$property}: $value;
+        }
+    }
+}
+
+@each $property, $values in $font {
+    @each $key, $value in $values {
+        .font-#{$key} {
+            font-#{$property}: $value;
+        }
+    }
+}
+
+.text-no-decoration {
+    text-decoration: none;
+}
+
+body {
+    font-family: $font-primary;
+    font-size: map.get(map.get($font, size), sm);
+    line-height: 1.5;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+    font-family: $font-secondary;
+    font-weight: bold;
+}

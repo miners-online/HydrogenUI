@@ -1,3 +1,5 @@
+@use "sass:map";
+
 $colors: (
     "black": rgb(33, 33, 33),
     "black-75": rgba(33, 33, 33, 0.75),
@@ -37,21 +39,21 @@ $colors: (
 );
 
 $color-aliases-light: (
-    "success": map-get($colors, "green"),
-    "danger": map-get($colors, "red"),
-    "warning": map-get($colors, "orange"),
-    "info": map-get($colors, "blue"),
-    "primary": map-get($colors, "purple"),
-    "secondary": map-get($colors, "black-50"),
+    "success": map.get($colors, "green"),
+    "danger": map.get($colors, "red"),
+    "warning": map.get($colors, "orange"),
+    "info": map.get($colors, "blue"),
+    "primary": map.get($colors, "purple"),
+    "secondary": map.get($colors, "black-50"),
 );
 
 $color-aliases-dark: (
-    "success": map-get($colors, "green-75"),
-    "danger": map-get($colors, "red-75"),
-    "warning": map-get($colors, "orange-75"),
-    "info": map-get($colors, "blue-75"),
-    "primary": map-get($colors, "purple-75"),
-    "secondary": map-get($colors, "black-25"),
+    "success": map.get($colors, "green-75"),
+    "danger": map.get($colors, "red-75"),
+    "warning": map.get($colors, "orange-75"),
+    "info": map.get($colors, "blue-75"),
+    "primary": map.get($colors, "purple-75"),
+    "secondary": map.get($colors, "black-25"),
 );
 
 :root {

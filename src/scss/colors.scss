@@ -3,17 +3,102 @@ $colors: (
     "black-75": rgba(33, 33, 33, 0.75),
     "black-50": rgba(33, 33, 33, 0.5),
     "black-25": rgba(33, 33, 33, 0.25),
+    "black-10": rgba(33, 33, 33, 0.1),
     "white": rgb(247, 247, 247),
     "white-75": rgba(247, 247, 247, 0.75),
     "white-50": rgba(247, 247, 247, 0.5),
     "white-25": rgba(247, 247, 247, 0.25),
+    "white-10": rgba(247, 247, 247, 0.1),
+    "red": rgb(220, 53, 69),
+    "red-75": rgba(220, 53, 69, 0.75),
+    "red-50": rgba(220, 53, 69, 0.5),
+    "red-25": rgba(220, 53, 69, 0.25),
+    "red-10": rgba(220, 53, 69, 0.1),
+    "green": rgb(40, 167, 69),
+    "green-75": rgba(40, 167, 69, 0.75),
+    "green-50": rgba(40, 167, 69, 0.5),
+    "green-25": rgba(40, 167, 69, 0.25),
+    "green-10": rgba(40, 167, 69, 0.1),
+    "blue": rgb(0, 123, 255),
+    "blue-75": rgba(0, 123, 255, 0.75),
+    "blue-50": rgba(0, 123, 255, 0.5),
+    "blue-25": rgba(0, 123, 255, 0.25),
+    "blue-10": rgba(0, 123, 255, 0.1),
+    "purple": rgb(102, 16, 242),
+    "purple-75": rgba(102, 16, 242, 0.75),
+    "purple-50": rgba(102, 16, 242, 0.5),
+    "purple-25": rgba(102, 16, 242, 0.25),
+    "purple-10": rgba(102, 16, 242, 0.1),
+    "orange": rgb(255, 133, 27),
+    "orange-75": rgba(255, 133, 27, 0.75),
+    "orange-50": rgba(255, 133, 27, 0.5),
+    "orange-25": rgba(255, 133, 27, 0.25),
+    "orange-10": rgba(255, 133, 27, 0.1),
 );
 
+$color-aliases-light: (
+    "success": map-get($colors, "green"),
+    "danger": map-get($colors, "red"),
+    "warning": map-get($colors, "orange"),
+    "info": map-get($colors, "blue"),
+    "primary": map-get($colors, "purple"),
+    "secondary": map-get($colors, "black-50"),
+);
+
+$color-aliases-dark: (
+    "success": map-get($colors, "green-75"),
+    "danger": map-get($colors, "red-75"),
+    "warning": map-get($colors, "orange-75"),
+    "info": map-get($colors, "blue-75"),
+    "primary": map-get($colors, "purple-75"),
+    "secondary": map-get($colors, "black-25"),
+);
+
+:root {
+    @each $key, $value in $colors {
+        --color-#{$key}: #{$value};
+    }
+}
+
+.theme-light {
+    @each $key, $value in $color-aliases-light {
+        --color-#{$key}: #{$value};
+    }
+}
+
+.theme-dark {
+    @each $key, $value in $color-aliases-dark {
+        --color-#{$key}: #{$value};
+    }
+}
+
 @each $key, $value in $colors {
-    .color-#{$key} {
+    .fg-#{$key} {
         color: $value;
     }
-    .background-#{$key} {
+    .bg-#{$key} {
         background-color: $value;
+    }
+}
+
+.theme-light {
+    @each $key, $value in $color-aliases-light {
+        .fg-#{$key} {
+            color: $value;
+        }
+        .bg-#{$key} {
+            background-color: $value;
+        }
+    }
+}
+
+.theme-dark {
+    @each $key, $value in $color-aliases-dark {
+        .fg-#{$key} {
+            color: $value;
+        }
+        .bg-#{$key} {
+            background-color: $value;
+        }
     }
 }

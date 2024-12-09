@@ -1,3 +1,4 @@
-@use './reset.scss';
-@use './colors.scss';
-@use './spacing.scss';
+@use './base/reset.scss';
+@use './base/colors.scss';
+@use './base/themes.scss';
+@use './base/spacing.scss';

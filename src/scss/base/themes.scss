@@ -1,0 +1,76 @@
+@use "sass:map";
+@use "./colors.scss";
+
+$color-aliases-light: (
+    "success": map.get(colors.$colors, "green"),
+    "danger": map.get(colors.$colors, "red"),
+    "warning": map.get(colors.$colors, "orange"),
+    "info": map.get(colors.$colors, "blue"),
+    "primary": map.get(colors.$colors, "purple"),
+    "secondary": map.get(colors.$colors, "black-50"),
+    "background": map.get(colors.$colors, "white"),
+    "background-75": map.get(colors.$colors, "white-75"),
+    "background-50": map.get(colors.$colors, "white-50"),
+    "background-25": map.get(colors.$colors, "white-25"),
+    "background-10": map.get(colors.$colors, "white-10"),
+    "foreground": map.get(colors.$colors, "black"),
+    "foreground-75": map.get(colors.$colors, "black-75"),
+    "foreground-50": map.get(colors.$colors, "black-50"),
+    "foreground-25": map.get(colors.$colors, "black-25"),
+    "foreground-10": map.get(colors.$colors, "black-10"),
+);
+
+$color-aliases-dark: (
+    "success": map.get(colors.$colors, "green-75"),
+    "danger": map.get(colors.$colors, "red-75"),
+    "warning": map.get(colors.$colors, "orange-75"),
+    "info": map.get(colors.$colors, "blue-75"),
+    "primary": map.get(colors.$colors, "purple-75"),
+    "secondary": map.get(colors.$colors, "black-25"),
+    "background": map.get(colors.$colors, "black"),
+    "background-75": map.get(colors.$colors, "black-75"),
+    "background-50": map.get(colors.$colors, "black-50"),
+    "background-25": map.get(colors.$colors, "black-25"),
+    "background-10": map.get(colors.$colors, "black-10"),
+    "foreground": map.get(colors.$colors, "white"),
+    "foreground-75": map.get(colors.$colors, "white-75"),
+    "foreground-50": map.get(colors.$colors, "white-50"),
+    "foreground-25": map.get(colors.$colors, "white-25"),
+    "foreground-10": map.get(colors.$colors, "white-10"),
+);
+
+:root {
+    *[data-theme="light"] {
+        @each $key, $value in $color-aliases-light {
+            --color-alias-#{$key}: #{$value};
+        }
+    }
+    
+    *[data-theme="dark"] {
+        @each $key, $value in $color-aliases-dark {
+            --color-alias-#{$key}: #{$value};
+        }
+    }    
+}
+
+*[data-theme="light"] {
+    @each $key, $value in $color-aliases-light {
+        .is-#{$key} {
+            color: $value;
+        }
+        .is-#{$key} {
+            background-color: $value;
+        }
+    }
+}
+
+*[data-theme="dark"] {
+    @each $key, $value in $color-aliases-dark {
+        .is-#{$key} {
+            color: $value;
+        }
+        .is-#{$key} {
+            background-color: $value;
+        }
+    }
+}

@@ -38,38 +38,8 @@ $colors: (
     "orange-10": rgba(255, 133, 27, 0.1),
 );
 
-$color-aliases-light: (
-    "success": map.get($colors, "green"),
-    "danger": map.get($colors, "red"),
-    "warning": map.get($colors, "orange"),
-    "info": map.get($colors, "blue"),
-    "primary": map.get($colors, "purple"),
-    "secondary": map.get($colors, "black-50"),
-);
-
-$color-aliases-dark: (
-    "success": map.get($colors, "green-75"),
-    "danger": map.get($colors, "red-75"),
-    "warning": map.get($colors, "orange-75"),
-    "info": map.get($colors, "blue-75"),
-    "primary": map.get($colors, "purple-75"),
-    "secondary": map.get($colors, "black-25"),
-);
-
 :root {
     @each $key, $value in $colors {
-        --color-#{$key}: #{$value};
-    }
-}
-
-.theme-light {
-    @each $key, $value in $color-aliases-light {
-        --color-#{$key}: #{$value};
-    }
-}
-
-.theme-dark {
-    @each $key, $value in $color-aliases-dark {
         --color-#{$key}: #{$value};
     }
 }
@@ -80,27 +50,5 @@ $color-aliases-dark: (
     }
     .bg-#{$key} {
         background-color: $value;
-    }
-}
-
-.theme-light {
-    @each $key, $value in $color-aliases-light {
-        .fg-#{$key} {
-            color: $value;
-        }
-        .bg-#{$key} {
-            background-color: $value;
-        }
-    }
-}
-
-.theme-dark {
-    @each $key, $value in $color-aliases-dark {
-        .fg-#{$key} {
-            color: $value;
-        }
-        .bg-#{$key} {
-            background-color: $value;
-        }
     }
 }

@@ -9,7 +9,7 @@ import dts from 'rollup-plugin-dts';
 
 export default [
   {
-    input: 'src/index.ts',
+    input: 'src/ts/index.ts',
     output: [
       {
         file: packageJson.main,

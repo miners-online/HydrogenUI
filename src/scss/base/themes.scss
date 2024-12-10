@@ -55,10 +55,10 @@ $color-aliases-dark: (
 
 *[data-theme="light"] {
     @each $key, $value in $color-aliases-light {
-        .is-#{$key} {
+        .fg-#{$key} {
             color: $value;
         }
-        .is-#{$key} {
+        .bg-#{$key} {
             background-color: $value;
         }
     }
@@ -66,10 +66,10 @@ $color-aliases-dark: (
 
 *[data-theme="dark"] {
     @each $key, $value in $color-aliases-dark {
-        .is-#{$key} {
+        .fg-#{$key} {
             color: $value;
         }
-        .is-#{$key} {
+        .bg-#{$key} {
             background-color: $value;
         }
     }

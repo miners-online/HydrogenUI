@@ -22,8 +22,7 @@ export const createButton = ({
     btn.addEventListener('click', onClick);
 
     const mode = primary ? 'button--primary' : 'button--secondary';
-    btn.className = ['button', `button--${size}`, mode].join(' ');
-    btn.dataset.theme = "light";
+    btn.className = ['button', `button--${size}`, mode, 'fg-white', 'bg-info'].join(' ');
 
     btn.style.backgroundColor = backgroundColor;
 

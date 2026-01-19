@@ -39,8 +39,8 @@
   "scripts": {
     "build": "rollup -c",
     "watch": "rollup --watch -c",
-    "clean": "rimraf ./dist",
-    "prebuild": "yarn clean",
+    "clean": "npx rimraf ./dist",
+    "prebuild": "npm run clean",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {

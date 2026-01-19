@@ -3,13 +3,8 @@ const config = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   staticDirs: ["../public"],
   addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    '@storybook/addon-onboarding',
-    '@storybook/addon-interactions',
-    '@storybook/addon-a11y',
-    '@storybook/addon-coverage',
-    '@storybook/addon-themes',
+    '@storybook/addon-docs',
+    '@storybook/addon-vitest'
   ],
   framework: {
     name: '@storybook/react-vite',

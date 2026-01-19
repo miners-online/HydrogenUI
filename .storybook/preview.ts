@@ -1,5 +1,5 @@
 import { Preview } from '@storybook/react';
-import { ThemeDecorator } from './withFluentTheme';
+import { ThemeDecorator } from './withTheme';
 
 const preview: Preview = {
   decorators: [ThemeDecorator],
@@ -10,10 +10,18 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
+
     options: {
       storySort: {
         order: ['Concepts', 'Components'],
       },
+    },
+
+    a11y: {
+      // 'todo' - show a11y violations in the test UI only
+      // 'error' - fail CI on a11y violations
+      // 'off' - skip a11y checks entirely
+      test: 'todo',
     },
   },
 };

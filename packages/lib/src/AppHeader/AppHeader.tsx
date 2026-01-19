@@ -1,8 +1,17 @@
 import React from 'react';
-import { AppHeaderProps, AppHeaderUserOverlayProps } from './AppHeader.types';
 import { ActionList, AnchoredOverlay, Button, Header, Text } from '@primer/react'
 import { UserAvatar, useUser } from '../Auth';
 
+export interface AppHeaderProps {
+  productName?: string;
+  userOverlayFallback?: React.ReactNode;
+}
+
+export interface AppHeaderUserOverlayProps {
+  onSignOut?: () => Promise<void>;
+  settingsUrl?: string;
+  fallback?: React.ReactNode;
+}
 
 const AppHeader = (props: AppHeaderProps) => {
   return (

@@ -18,9 +18,6 @@ export default {
   //   onCreateAccount: fn(),
   // },
   args: {
-    searchProps: {
-      onChange: fn()
-    }
   }
 };
 

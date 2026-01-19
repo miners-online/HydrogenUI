@@ -1,0 +1,88 @@
+import {
+  Meta,
+  Subtitle,
+} from '@storybook/addon-docs/blocks';
+
+<Meta title='Concepts/Auth Integration' />
+
+# Authentication Integration
+
+Hydrogen UI is designed to seamlessly integrate with various authentication systems, providing a consistent and
+user-friendly experience across your application.
+
+We provide first-party support for BetterAuth, a robust authentication solution that simplifies user management
+and enhances security.
+
+## Using Auth in Hydrogen UI
+
+1. Configure you layout to include the `UserProvider` component from Hydrogen UI.
+
+```jsx
+import {UserProvider} from '@miners-online/hydrogen-ui';
+
+export default function App() {
+  return (
+    <UserProvider>
+      {/* Your application components */}
+    </UserProvider>
+  );
+}
+```
+
+2. Utilize the `useUser` hook to access user information and authentication status within your components.
+
+```jsx
+import {useUser} from '@miners-online/hydrogen-ui';
+
+export function UserProfile() {
+  const {user} = useUser();
+
+  if (!user) {
+    return <div>Please log in to view your profile.</div>;
+  }
+
+  return (
+    <div>
+      <h1>Welcome, {user.name}!</h1>
+      {/* Display additional user information */}
+    </div>
+  );
+}
+```
+
+3. Provide an initial user state to the `UserProvider` if you have server-side rendering or initial user data.
+
+```jsx
+import {UserProvider, User} from '@miners-online/hydrogen-ui';
+
+export default function App() {
+  const initialUser = new User(
+    "user-id-123",
+    "Jane Doe",
+    "jane.doe@example.com",
+    undefined
+  );
+
+  return (
+    <UserProvider initialUser={initialUser}>
+      {/* Your application components */}
+    </UserProvider>
+  );
+}
+```
+
+Alternatively, if you are using BetterAuth, you can convert the BetterAuth user to a Hydrogen UI user:
+
+```jsx
+import {UserProvider, User, createUserFromBetterAuth} from '@miners-online/hydrogen-ui';
+
+export default function App({betterAuthUser}) {
+  const initialUser = createUserFromBetterAuth(betterAuthUser);
+
+  return (
+    <UserProvider initialUser={initialUser}>
+      {/* Your application components */}
+    </UserProvider>
+  );
+}
+```

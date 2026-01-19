@@ -44,7 +44,7 @@ export const CustomSize = {
   },
 };
 
-export const NoUser = {
+export const DefaultFallback = {
   args: {
     user: undefined,
     size: 32,

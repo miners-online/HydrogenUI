@@ -1,7 +1,8 @@
 {
-  "name": "@miners-online/hydrogen-ui",
+  "name": "hydrogen-ui-monorepo",
+  "private": true,
   "version": "1.2.0",
-  "description": "A UI design system containing extra components for Miners Online. ",
+  "description": "Monorepo for HydrogenUI: library and docs",
   "author": {
     "name": "Miners Online",
     "website": "https://minersonline.uk/"
@@ -14,77 +15,15 @@
     "url": "https://github.com/miners-online/HydrogenUI/issues"
   },
   "license": "MIT",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist/**/*",
-    "README.md"
+  "workspaces": [
+    "packages/*"
   ],
-  "dependencies": {
-    "@primer/css": "^22.1.0",
-    "@primer/octicons-react": "^19.21.2",
-    "@primer/primitives": "^11.3.2",
-    "@primer/react": "^38.7.1",
-    "better-auth": "^1.4.15",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3"
-  },
   "scripts": {
-    "build": "rollup -c",
-    "watch": "rollup --watch -c",
-    "clean": "rimraf ./dist",
-    "prebuild": "yarn clean",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
-  },
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "^29.0.0",
-    "@rollup/plugin-node-resolve": "^16.0.3",
-    "@rollup/plugin-terser": "^0.4.4",
-    "@rollup/plugin-typescript": "^12.3.0",
-    "@semantic-release/commit-analyzer": "^13.0.1",
-    "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^12.0.2",
-    "@semantic-release/npm": "^13.1.3",
-    "@semantic-release/release-notes-generator": "^14.1.0",
-    "@storybook/addon-vitest": "^10.1.11",
-    "@storybook/react": "^10.1.11",
-    "@storybook/react-vite": "^10.1.11",
-    "@mdx-js/react": "^2.3.0",
-    "@mdx-js/mdx": "^2.3.0",
-    "@mdx-js/rollup": "^2.3.0",
-    "@storybook/addon-docs": "^10.1.11",
-    "@types/react": "^19.2.8",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.1.2",
-    "@vitest/browser-playwright": "^4.0.17",
-    "@vitest/coverage-v8": "^4.0.17",
-    "auto": "^11.3.6",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^10.0.0",
-    "chromatic": "^13.3.5",
-    "eslint": "^9.39.2",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^7.0.1",
-    "eslint-plugin-react-refresh": "^0.4.26",
-    "eslint-plugin-storybook": "^10.1.11",
-    "msw": "^2.12.7",
-    "msw-storybook-addon": "^2.0.6",
-    "playwright": "^1.57.0",
-    "prop-types": "^15.8.1",
-    "rollup": "^4.55.2",
-    "rollup-plugin-dts": "^6.3.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "semantic-release": "^25.0.2",
-    "storybook": "^10.1.11",
-    "typescript": "^5.9.3",
-    "vite": "^7.3.1",
-    "vitest": "^4.0.17"
-  },
-  "resolutions": {
-    "jackspeak": "2.1.1"
-  },
-  "homepage": "https://github.com/miners-online/HydrogenUI#readme"
+    "bootstrap": "npm install",
+    "build:lib": "npm run -w @miners-online/hydrogen-ui build",
+    "build:docs": "npm run -w @miners-online/hydrogen-ui-docs storybook:build",
+    "build": "npm run build:lib && npm run build:docs",
+    "storybook": "npm run -w @miners-online/hydrogen-ui-docs storybook",
+    "clean": "rimraf packages/*/dist"
+  }
 }

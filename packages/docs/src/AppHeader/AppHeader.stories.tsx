@@ -1,4 +1,4 @@
-import AppHeader from '.';
+import { AppHeader } from '@miners-online/hydrogen-ui';
 import { fn } from 'storybook/test';
 
 import React from 'react';

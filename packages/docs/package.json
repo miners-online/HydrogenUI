@@ -1,0 +1,32 @@
+{
+  "name": "@miners-online/hydrogen-ui-docs",
+  "version": "1.2.0",
+  "private": true,
+  "description": "Storybook documentation site for HydrogenUI",
+  "dependencies": {
+    "@miners-online/hydrogen-ui": "file:../lib",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
+  },
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "storybook:build": "storybook build"
+  },
+  "devDependencies": {
+    "@storybook/addon-vitest": "^10.1.11",
+    "@storybook/react": "^10.1.11",
+    "@storybook/react-vite": "^10.1.11",
+    "@mdx-js/react": "^2.3.0",
+    "@mdx-js/mdx": "^2.3.0",
+    "@mdx-js/rollup": "^2.3.0",
+    "@storybook/addon-docs": "^10.1.11",
+    "@vitejs/plugin-react": "^5.1.2",
+    "msw": "^2.12.7",
+    "msw-storybook-addon": "^2.0.6",
+    "@vitest/browser-playwright": "^4.0.17",
+    "playwright": "^1.57.0",
+    "storybook": "^10.1.11",
+    "vite": "^7.3.1",
+    "vitest": "^4.0.17"
+  }
+}

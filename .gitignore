@@ -12,7 +12,6 @@ node_modules
 /build
 /dist
 /storybook-static
-.storybook
 
 # misc
 .DS_Store

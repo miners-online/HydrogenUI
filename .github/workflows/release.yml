@@ -30,9 +30,11 @@ jobs:
       - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
         run: npm audit signatures
       - name: Run builds
-        run: npm run -w @miners-online/hydrogen-ui build
+        run: npm run build
+        working-directory: ./packages/lib  # Ensure build runs in the right package directory
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
+        working-directory: ./packages/lib  # Ensure release runs in the same directory as the build

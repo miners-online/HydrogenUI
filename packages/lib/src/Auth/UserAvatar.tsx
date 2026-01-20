@@ -1,3 +1,5 @@
+"use client";
+
 import { Avatar } from "@primer/react";
 
 import { useUser } from "./useUser";

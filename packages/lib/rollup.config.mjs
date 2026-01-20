@@ -43,41 +43,6 @@ export default [
       warn(warning);
     }
   },
-  
-
-  // Browser-only bundles (CJS + ESM) built from a client-safe entry
-  {
-    input: 'src/index.browser.ts',
-    output: [
-      { file: 'dist/cjs/browser.js', format: 'cjs', sourcemap: true },
-      { file: 'dist/esm/browser.js', format: 'es', sourcemap: true }
-    ],
-    external: id => /node_modules/.test(id) && !/\.css$/.test(id),
-    plugins: [
-      external(),
-      resolve({ extensions: ['.mjs', '.js', '.json', '.node', '.ts', '.tsx'] }),
-        typescript2({
-          tsconfig: './tsconfig.json',
-          tsconfigOverride: {
-            compilerOptions: {
-              declaration: false,
-              target: 'ES2020',
-              emitDeclarationOnly: false
-            }
-          },
-        useTsconfigDeclarationDir: false,
-        clean: false
-      }),
-      commonjs({ extensions: ['.js', '.cjs'] }),
-      postcss({ extract: false, minimize: true }),
-      terser()
-    ],
-    onwarn(warning, warn) {
-      if (warning.code === 'MODULE_LEVEL_DIRECTIVE') return;
-      warn(warning);
-    }
-  },
-
   // Type definitions bundles for ESM and CJS — generate directly from source
   {
     input: 'src/index.ts',
@@ -89,16 +54,5 @@ export default [
     output: [{ file: 'dist/cjs/index.d.ts', format: 'es' }],
     plugins: [dts()]
   }
-  ,
-  // Browser type definitions for browser entry
-  {
-    input: 'src/index.browser.ts',
-    output: [{ file: 'dist/esm/browser.d.ts', format: 'es' }],
-    plugins: [dts()]
-  },
-  {
-    input: 'src/index.browser.ts',
-    output: [{ file: 'dist/cjs/browser.d.ts', format: 'es' }],
-    plugins: [dts()]
-  }
+  
 ];

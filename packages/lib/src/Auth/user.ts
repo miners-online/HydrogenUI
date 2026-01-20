@@ -1,4 +1,4 @@
-import { User as BAUser } from "better-auth";
+import type { User as BAUser } from "better-auth";
 
 export class User {
     constructor(

@@ -18,14 +18,19 @@
   "module": "dist/esm/index.js",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
+      "types": "./dist/esm/index.d.ts",
+      "browser": {
+        "types": "./dist/esm/browser.d.ts",
+        "import": "./dist/esm/browser.js",
+        "require": "./dist/cjs/browser.js"
+      },
       "import": "./dist/esm/index.js",
       "require": "./dist/cjs/index.js"
     },
     "./*": "./dist/*",
     "./package.json": "./package.json"
   },
-  "types": "dist/index.d.ts",
+  "types": "dist/esm/index.d.ts",
   "files": [
     "dist/**/*",
     "README.md"
